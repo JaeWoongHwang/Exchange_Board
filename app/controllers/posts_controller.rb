@@ -13,11 +13,11 @@ class PostsController < ApplicationController
   end
 
   def add_comment
-    @comments = Comment.new(
-      post_id: params[:id],
-      content: params[:content]
+    @comment = Comment.new(
+      content: params[:content],
+      post_id: params[:id]
     )
-    @comments.save
+    @comment.save
   end
 
   # GET /posts/new
