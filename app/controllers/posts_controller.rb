@@ -12,6 +12,14 @@ class PostsController < ApplicationController
   def show
   end
 
+  def add_comment
+    @comments = Comment.new(
+      post_id: params[:id],
+      content: params[:content]
+    )
+    @comments.save
+  end
+
   # GET /posts/new
   def new
     @post = Post.new
