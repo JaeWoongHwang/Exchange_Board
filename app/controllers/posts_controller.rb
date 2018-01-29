@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  require 'money'
 
   # GET /posts
   # GET /posts.json
@@ -7,6 +8,10 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def get_rates
+    money = Money.new(1000, "USD")
+    render :index
+  end
   # GET /posts/1
   # GET /posts/1.json
   def show
