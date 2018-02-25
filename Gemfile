@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'httparty'
+gem 'nokogiri'
+gem 'money-rails'
+gem 'exchange_rates'
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.9'

@@ -4,9 +4,18 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
+    url = "https://forex.1forge.com/1.0.3/quotes?pairs=EURUSD,GBPJPY,AUDUSD&api_key=M6rQ7bJ7Eor949rVxGwYPL9gON289o8B"
+    response = HTTParty.get(url)
+    html = Nokogiri::HTML(response.body)
+    @AUDUSD = html.css("AUDUSD")
+    @EURUSD = html.css("EURUSD")
+    
+
     @posts = Post.all
   end
 
+  def exchange_rates
+  end
   # GET /posts/1
   # GET /posts/1.json
   def show
