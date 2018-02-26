@@ -25,14 +25,14 @@
 </table>
 
 <%= link_to 'New Post', new_post_path %>
-
+<%= @euro_title %>
 <br>
 <h1>Exchange Rate</h1>
   <table>
     <thead>
       <tr>
         <th>KRW(Korea)</th>
-        <th>USD(United States)</th>
+        <th>USD(US)</th>
         <th>Exchange Result</th>
         <th colspan="3"></th>
       </tr>
@@ -41,7 +41,7 @@
       <tr>
         <td>1</td>
         <td></td>
-        <td><%=@AUDUSD.text%></td>
+        <td></td>
       </tr>
     </tbody>
 
@@ -57,7 +57,7 @@
       <tr>
         <td>1</td>
         <td></td>
-        <td><%=@EURUSD.text%></td>
+        <td></td>
       </tr>
     </tbody>
 
@@ -73,7 +73,7 @@
       <tr>
         <td>1</td>
         <td></td>
-        <td>결과 값</td>
+        <td></td>
       </tr>
     </tbody>
 
@@ -89,9 +89,7 @@
       <tr>
         <td>1</td>
         <td></td>
-        <td>결과 값</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
-
-<p><%=MoneyRails.default_bank.get_rate(:LKR, :USD)%></p>

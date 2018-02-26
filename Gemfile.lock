@@ -35,9 +35,15 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.5.2)
+      public_suffix (>= 2.0.2, < 4.0)
     arel (6.0.4)
     awesome_print (1.8.0)
     bcrypt (3.1.11)
+    better_errors (2.4.0)
+      coderay (>= 1.0.0)
+      erubi (>= 1.0.0)
+      rack (>= 0.9.0)
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
     builder (3.2.3)
@@ -62,6 +68,9 @@ GEM
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
+    domain_name (0.5.20170404)
+      unf (>= 0.0.5, < 1.0.0)
+    erubi (1.7.0)
     erubis (2.7.0)
     exchange_rates (0.3.0)
       nokogiri
@@ -69,6 +78,15 @@ GEM
     ffi (1.9.18)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    http (3.0.0)
+      addressable (~> 2.3)
+      http-cookie (~> 1.0)
+      http-form_data (>= 2.0.0.pre.pre2, < 3)
+      http_parser.rb (~> 0.6.0)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
+    http-form_data (2.0.0)
+    http_parser.rb (0.6.0)
     httparty (0.16.0)
       multi_xml (>= 0.5.2)
     i18n (0.9.3)
@@ -127,6 +145,7 @@ GEM
       method_source (~> 0.9.0)
     pry-rails (0.3.6)
       pry (>= 0.10.4)
+    public_suffix (3.0.1)
     rack (1.6.8)
     rack-contrib (1.8.0)
       rack (~> 1.4)
@@ -216,6 +235,9 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.1.4)
       execjs (>= 0.3.0, < 3)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.4)
     unicode-display_width (1.3.0)
     warden (1.2.7)
       rack (>= 1.0)
@@ -230,13 +252,16 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  better_errors
   byebug
   coffee-rails (~> 4.1.0)
   devise
   exchange_rates
+  http
   httparty
   jbuilder (~> 2.0)
   jquery-rails
+  json
   meta_request
   money-rails
   nokogiri
