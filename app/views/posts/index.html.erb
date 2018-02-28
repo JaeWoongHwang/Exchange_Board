@@ -25,7 +25,7 @@
 </table>
 
 <%= link_to 'New Post', new_post_path %>
-<%= @euro_title %>
+
 <br>
 <h1>Exchange Rate</h1>
   <table>
@@ -40,7 +40,7 @@
     <tbody>
       <tr>
         <td>1</td>
-        <td></td>
+        <td>test <%= @money.to_s%></td>
         <td></td>
       </tr>
     </tbody>
@@ -61,35 +61,7 @@
       </tr>
     </tbody>
 
-    <thead>
-      <tr>
-        <th>KRW(Korea)</th>
-        <th>CNY(China)</th>
-        <th>Exchange Result</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td></td>
-        <td></td>
-      </tr>
-    </tbody>
-
-    <thead>
-      <tr>
-        <th>KRW(Korea)</th>
-        <th>EUR(Europe)</th>
-        <th>Exchange Result</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+  <%= @rates.convert(["EURUSD", "GBPJPY"]) %>
+  <form class="" action="https://forex.1forge.com/1.0.3/convert?from=USD&to=EUR&quantity=100&api_key=<%=@api_key%>" method="get">
+    Convert
+  </form>

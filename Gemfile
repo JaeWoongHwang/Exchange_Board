@@ -5,8 +5,6 @@ gem 'nokogiri'
 gem 'money-rails'
 gem 'exchange_rates'
 gem 'devise'
-gem 'json'
-gem 'http'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.9'
 # Use sqlite3 as the database for Active Record

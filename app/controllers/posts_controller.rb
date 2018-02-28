@@ -5,6 +5,9 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    @api_key = "M6rQ7bJ7Eor949rVxGwYPL9gON289o8B"
+    @rates = ForexDataClient.new(@api_key)
+    
   end
 
   def exchange_rates
