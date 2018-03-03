@@ -5,7 +5,13 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
-    @api_key = "M6rQ7bJ7Eor949rVxGwYPL9gON289o8B"
+    @key = "Lam6x2ftFT3OKcDg93wWyatSJXaoLvCa"
+    url = "https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=Lam6x2ftFT3OKcDg93wWyatSJXaoLvCa&searchdate=20180302&data=AP01"
+    response = HTTParty.get(url)
+    html = Nokogiri::HTML(response.body)
+    rates = html.css('#cur_nm = "일본달러"')
+    puts '-----test------'
+    puts html
   end
 
   # GET /posts/1
