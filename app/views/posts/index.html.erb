@@ -1,67 +1,98 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Exchange Posts</h1>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<div style='text-align:center;'>
+<h3 style='text-align: center;margin: 55px 0px;border-bottom: 2px solid #666; display:inline-block;padding-bottom:10px'>Exchange Board</h3>
+</div>
+    <div id="carouselFade" class="carousel slide carousel-fade" data-ride="carousel">
 
-<table>
-  <thead>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <div class="carousel-caption">
+                  <h3>Exchange Board</h3>
+                  <p>You can exchange a small amount of money via our service.</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="carousel-caption">
+                  <h3>Customers</h3>
+                  <p>Over the twelve country's users who are using our service.</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="carousel-caption">
+                  <h3>Transparency</h3>
+                  <p>Our service was constructed block chain system, so transparency is our service's strength.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carouselFade" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carouselFade" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+<h3>Exchange Post List</h3>
+
+<table class="table">
+  <thead class="thead-light">
     <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th colspan="3"></th>
+      <th scope="col">Num</th>
+      <th scope="col">Title</th>
+      <th scope="col">Content</th>
+      <th scope="col">Options</th>
     </tr>
   </thead>
-
   <tbody>
+    <% post_number = 1 %>
     <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.content %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <tr>
+      <th scope="row"><%=post_number%></th>
+      <td><%= post.title %></td>
+      <td><%= post.content %></td>
+      <td><%= link_to 'Show', post %> | <%= link_to 'Edit', edit_post_path(post) %> | <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% post_number = post_number + 1 %>
+    </tr>
     <% end %>
   </tbody>
 </table>
-
-<%= link_to 'New Post', new_post_path %>
-
+<%= link_to 'New Post', new_post_path, class: "btn btn-info" %>
 <br>
-<h1>Exchange Rate</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>KRW(Korea)</th>
-        <th>USD(US)</th>
-        <th>Exchange Result</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>test <%= @money.to_s%></td>
-        <td></td>
-      </tr>
-    </tbody>
 
-    <thead>
-      <tr>
-        <th>KRW(Korea)</th>
-        <th>JYP100(Japan)</th>
-        <th>Exchange Result</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td></td>
-        <td></td>
-      </tr>
-    </tbody>
-
-  <%= @rates.convert(["EURUSD", "GBPJPY"]) %>
-  <form class="" action="https://forex.1forge.com/1.0.3/convert?from=USD&to=EUR&quantity=100&api_key=<%=@api_key%>" method="get">
-    Convert
-  </form>
+<h3>Exchange Rate</h3>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Num</th>
+      <th scope="col">Standard Currency</th>
+      <th scope="col">Currency</th>
+      <th scope="col">Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>KRW(Korea)</td>
+      <td>USD(US)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>KRW(Korea)</td>
+      <td>JYP100(Japan)</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>

@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'bootstrap'
+gem 'javascript'
 gem 'httparty'
 gem 'nokogiri'
 gem 'money-rails'
