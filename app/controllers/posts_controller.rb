@@ -6,12 +6,13 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @key = "Lam6x2ftFT3OKcDg93wWyatSJXaoLvCa"
-    url = "https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=Lam6x2ftFT3OKcDg93wWyatSJXaoLvCa&searchdate=20180302&data=AP01"
+    url = "https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=Lam6x2ftFT3OKcDg93wWyatSJXaoLvCa&searchdate=20180306&data=AP01"
     response = HTTParty.get(url)
-    html = Nokogiri::HTML(response.body)
-    rates = html.css('#cur_nm = "일본달러"')
-    puts '-----test------'
-    puts html
+    response.parsed_response
+    # html = Nokogiri::HTML(response.body)
+    # @rates = JSON.parse(html)
+    @rates = response
+
   end
 
   # GET /posts/1

@@ -84,15 +84,28 @@
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>KRW(Korea)</td>
-      <td>USD(US)</td>
-      <td></td>
+      <td><%=@rates[12]["cur_unit"]%> | <%=@rates[12]["cur_nm"]%></td>
+      <td><%=@rates[21]["cur_unit"]%> | <%=@rates[21]["cur_nm"]%></td>
+      <td><%=@rates[21]["deal_bas_r"]%></td>
     </tr>
     <tr>
       <th scope="row">2</th>
-      <td>KRW(Korea)</td>
-      <td>JYP100(Japan)</td>
-      <td></td>
+      <td><%=@rates[12]["cur_unit"]%> | <%=@rates[12]["cur_nm"]%></td>
+      <td><%=@rates[7]["cur_unit"]%> | <%=@rates[7]["cur_nm"]%></td>
+      <td><%=@rates[7]["deal_bas_r"]%></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td><%=@rates[12]["cur_unit"]%> | <%=@rates[12]["cur_nm"]%></td>
+      <td><%=@rates[8]["cur_unit"]%> | <%=@rates[8]["cur_nm"]%></td>
+      <td><%=@rates[7]["deal_bas_r"]%></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td><%=@rates[12]["cur_unit"]%> | <%=@rates[12]["cur_nm"]%></td>
+      <td><%=@rates[11]["cur_unit"]%> | <%=@rates[11]["cur_nm"]%></td>
+      <td><%=@rates[11]["deal_bas_r"]%></td>
     </tr>
   </tbody>
+<%= @rates[0]["cur_unit"] %>
 </table>
