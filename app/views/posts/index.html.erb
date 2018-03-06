@@ -71,41 +71,4 @@
 <%= link_to 'New Post', new_post_path, class: "btn btn-info" %>
 <br>
 
-<h3>Exchange Rate</h3>
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Num</th>
-      <th scope="col">Standard Currency</th>
-      <th scope="col">Currency</th>
-      <th scope="col">Result</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td><%=@rates[12]["cur_unit"]%> | <%=@rates[12]["cur_nm"]%></td>
-      <td><%=@rates[21]["cur_unit"]%> | <%=@rates[21]["cur_nm"]%></td>
-      <td><%=@rates[21]["deal_bas_r"]%></td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td><%=@rates[12]["cur_unit"]%> | <%=@rates[12]["cur_nm"]%></td>
-      <td><%=@rates[7]["cur_unit"]%> | <%=@rates[7]["cur_nm"]%></td>
-      <td><%=@rates[7]["deal_bas_r"]%></td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td><%=@rates[12]["cur_unit"]%> | <%=@rates[12]["cur_nm"]%></td>
-      <td><%=@rates[8]["cur_unit"]%> | <%=@rates[8]["cur_nm"]%></td>
-      <td><%=@rates[7]["deal_bas_r"]%></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td><%=@rates[12]["cur_unit"]%> | <%=@rates[12]["cur_nm"]%></td>
-      <td><%=@rates[11]["cur_unit"]%> | <%=@rates[11]["cur_nm"]%></td>
-      <td><%=@rates[11]["deal_bas_r"]%></td>
-    </tr>
-  </tbody>
-<%= @rates[0]["cur_unit"] %>
-</table>
+<%= render '/posts/rates' %>
