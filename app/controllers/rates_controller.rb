@@ -1,29 +1,11 @@
 class RatesController < ApplicationController
-  def initialize(api_key)
-   @api_key = api_key
- end
-
- def fetch(api_call)
-   JSON.parse(HTTP.get("https://forex.1forge.com/1.0.2/" + api_call + "&api_key=" + @api_key))
- end
-
- def quota()
-   self.fetch('quota?cache=false')
- end
-
- def getSymbols()
-   self.fetch('symbols?cache=false')
- end
-
- def getQuotes(symbols)
-   self.fetch('quotes?cache=false&pairs=' + symbols.join(','))
- end
-
- def convert(from, to, quantity)
-   self.fetch('convert?cache=false&from=' + from + '&to=' + to + '&quantity=' + quantity.to_s)
- end
-
- def getMarketStatus()
-   self.fetch('market_status?cache=false')
- end
+  def index
+    @key = "Lam6x2ftFT3OKcDg93wWyatSJXaoLvCa"
+    url = "https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=Lam6x2ftFT3OKcDg93wWyatSJXaoLvCa&searchdate=20180306&data=AP01"
+    response = HTTParty.get(url)
+    response.parsed_response
+    # html = Nokogiri::HTML(response.body)
+    # @rates = JSON.parse(html)
+    @rates = response
+  end
 end
