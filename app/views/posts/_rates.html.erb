@@ -1,4 +1,12 @@
 <h3>Exchange Rate</h3>
+<head>
+  <script type="text/javascript">
+ // Call jQuery function
+  $(document).ready(function(){
+    searchajax();
+  });
+  </script>
+</head>
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -20,17 +28,12 @@
       </td>
       <td><%=@rates[21]["cur_unit"]%> | <%=@rates[21]["cur_nm"]%></td>
       <td>
-        <script>
+          <ui id= "calculators">
+            <%= @posts.calculators.each do |calculator| %>
+              <li><%= calculator.value %></li>
+              <% end %>
+            </ui >
 
-          // var get_form = document.getElementById("volumn_usd").value;
-          // $.ajax({
-          //   url: "/posts/index",
-          //   method: "POST",
-          //   data:{
-          //
-          //   }
-          // })
-        </script>
         <%=@rates[21]["deal_bas_r"].to_f%>
         </td>
     </tr>
