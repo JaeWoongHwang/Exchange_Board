@@ -27,15 +27,7 @@
       </form>
       </td>
       <td><%=@rates[21]["cur_unit"]%> | <%=@rates[21]["cur_nm"]%></td>
-      <td>
-          <ui id= "calculators">
-            <%= @posts.calculators.each do |calculator| %>
-              <li><%= calculator.value %></li>
-              <% end %>
-            </ui >
-
-        <%=@rates[21]["deal_bas_r"].to_f%>
-        </td>
+      <td><%=@rates[21]["deal_bas_r"]%></td>
     </tr>
     <tr>
       <th scope="row">2</th>
